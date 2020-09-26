@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+
+<div>
+  <!--绝对定位的图片-->
+    <a href="#nowhere">
+        <img src="img/site/simpleLogo.png"  class="simpleLogo" id="simpleLogo">
+    </a>
+    <form action="foresearch" method="post" >
+    <!--向右漂浮的div-->
+    <div class="simpleSearchDiv pull-right">
+        <input type="text"  name="keyword" placeholder="平衡车 原汁机" value="${param.keyword}">
+	    <button type="submit" class="searchButton">搜索</button>
+	    <!--子div-->
+	    <div class="searchBelow">
+	        <c:forEach items="${categorys}" var="c" varStatus="st">
+            <c:if test="${st.count>=5 and st.count<=8}">
+               <span> <a href="forecategory?cid=${c.id}"> ${c.name} </a>
+               <c:if test="${st.count!=8}">
+                    <span>|</span>
+                </c:if>
+                </span>
+            </c:if>
+            </c:forEach>
+	    </div>
+    </div>
+    </form>
+    <div style="clear:both"></div>
+</div>

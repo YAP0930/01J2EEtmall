@@ -1,0 +1,2146 @@
+@CHARSET "UTF-8";
+/*整个body*/
+body{
+    font-size: 12px;/*把所有文字的大小调成12px,这是天猫默认的文字大小*/
+    font-family: Arial;/*字库使用Arial*/
+}
+/*所有超链*/
+a{
+    color:#999;/*所有的超链，都以灰色#999 形式表现出来*/
+}
+/*天猫红*/
+.redColor{
+    color: #C40000 !important;/*天猫整个网站使用的天猫红都是#C40000, 在这个例子里首页和购物车图标使用了本样式*/
+}
+/******************************************************************nav*/
+/*置顶导航nav*/
+nav.top{
+
+    background-color: #f2f2f2;/*背景色#f2f2f2;*/
+
+    padding-top: 5px;/*上内边距是5px*/
+
+    padding-bottom: 5px;/*下内边距是5px*/
+
+    border-bottom:1px solid  #e7e7e7;/*下边缘有1个像素的实线边框，颜色是比背景色#f2f2f2略深的#e7e7e7*/
+
+}
+/*置顶导航里的span和超链*/
+nav.top span, nav.top a{
+
+    color: #999;/*颜色#999*/
+
+    margin: 0px 10px 0px 10px;/*并且有左右外边距10px，但是没有上下外边距*/
+
+}
+/*超链悬停*/
+nav.top a:hover{
+
+    color: #C40000;/*当鼠标移动到超链上的时候，颜色变为天猫红 #C40000*/
+
+    text-decoration: none;/*去掉下划线*/
+
+}
+/******************************************************************search*/
+/*搜索栏*/
+div.searchDiv{
+   background-color: #C40000;/*搜索框div背景色是天猫红#C40000;*/
+   width: 400px;/*宽度固定400px;*/
+   margin: 50px auto;/*水平居中，并且有50px的上下外边距*/
+   padding: 1px;/*有1px的内边距*/
+   height: 40px;/*高度是40px；*/
+   display: block;/*以块状元素显示，只有在以块状元素显示的时候,水平居中才有效果。 当然div默认也是块状元素显示的*/
+}
+
+/*搜索栏中的输入框*/
+div.searchDiv input{
+   width: 275px;/*宽度275px*/
+   border: 1px solid transparent;/*边框设置成透明的，否则会有边框阴影*/
+   height: 36px;/*高度36px*/
+   margin: 1px;/*外边距设置为1px，看上去输入框和边框之间就有很小的空隙*/
+   outline:none;/*去掉输入框轮廓，否则获取焦点的时候会发生颜色变化*/
+}
+/*搜索栏中的按钮*/
+div.searchDiv button{
+   width: 110px;/*宽度110px,这样加上左边的input的275px的宽度，正好把searchDiv填满*/
+   border: 1px solid #C40000;/*边框设置成透明的，否则会有边框阴影*/
+   background-color: #C40000;/*背景色设置成天猫红，和searchDiv融为一体*/
+   color: white;/*字体白色*/
+   font-size: 20px;/*字体大小20px*/
+   font-weight: bold;/*字体加粗*/
+   outline:none;
+}
+/*搜索栏下方的关键字*/
+div.searchBelow{
+   margin-top: 3px;/*搜索栏下方的div，有3个像素的上外边距*/
+   margin-left: -20px;/*-20个像素的左外边距*/
+}
+/*关键字之间的竖棒*/
+div.searchBelow span{
+   color: #999;/*把不同的关键字之间的竖棒设置为灰色*/
+}
+/*关键字超链*/
+div.searchBelow a{
+    padding: 0px 20px 0px 20px;/*超链之间的水平间隔20px*/
+    font-size: 14px;/*超链文字大小14px*/
+    text-decoration: none;
+}
+div.searchBelow a:hover{
+    color: #C40000;
+}
+/*logo图片*/
+img.logo{
+    position: absolute;/*logo图片使用绝对定位*/
+    left: 0px;/*贴在左边*//*行内元素的left/top指外边距*/
+    top: 30px;/*距离上面30px*/
+    z-index:-1;/*-1表示放在下面，免得图片挡住了输入框*/
+}
+/******************************************************************searchResultPage*/
+/**********************categoryProducts.htm**********/
+/*整个分类div*/
+div.categoryPageDiv{
+   max-width: 1013px;/*最大宽度1013px，如果用户的分辨率比较大，那么就会使产品列表整体宽度最大1013，并且居中，这样看上去好一点，而不是铺满整个屏幕*/
+   margin: 10px auto;/*居中显示*/
+}
+/*产品列表div*/
+div.categoryProducts{
+   padding: 0px 20px 40px 20px;/*内边距*/
+}
+/*产品项*/
+div.productUnit{
+   width: 225px;/*宽度: 225px*/
+   height: 348px;/*高度: 338px*/
+   border: 3px solid #fff;/*边框3个像素，但是是白色的，只有当鼠标移动上来的时候，才会变成天猫红*/
+   background-color: white;/*背景色: white*/
+   margin: 12px 5px;/*外边距*/
+   float: left;/*向左漂浮，这样可以水平摆放*/
+}
+/*产品项的鼠标悬浮状态*/
+div.productUnit:hover{
+   border:3px solid #C40000;/*边框变成天猫红*/
+}
+/*产品项的边框*/
+div.productUnitFrame{
+   border:1px solid #eee;/*这个是又一个边框，在鼠标没有悬停的时候，显示为灰色*/
+   height:100%;/*高度100%*/
+}
+/*产品项的边框鼠标悬停状态*/
+div.productUnitFrame:hover{
+   border:1px solid #C40000;/*颜色变为天猫红，和外层3个像素的div融为一体，一共表现为厚实的4个像素*/
+}
+/*产品图片*/
+div.productUnit img.productImage{
+   width: 100%;/*宽度: 100%*/
+   height: 190px;/*高度: 190px*/
+}
+/*产品价格*/
+div.productUnit span.productPrice{
+   font-size: 20px;/*字体大小: 20px*/
+   color: #CC0000;/*字体颜色: #CC0000*/
+   display: block;/*以块状显示，自动换行*/
+   padding-left: 4px;/*左内边距: 4px*/
+}
+/*产品链接*/
+div.productUnit a.productLink{
+   margin: 10px 0px;/*上下外边距10px*/
+   color: #333333;/*字体颜色: #333333*/
+   display: block;/*以块状显示，自动换行*/
+   height:46px;/*高度34px*/
+}
+/*产品链接鼠标悬停状态*/
+div.productUnit a.productLink:hover{
+   text-decoration: underline;/*有下划线*/
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*天猫专卖链接*/
+div.productUnit a.tmallLink{
+   margin: 10px 0px;/*上下外边距10px*/
+   color: #999999;/*字体颜色: #999999*/
+   display:block;/*以块状显示，自动换行*/
+   text-decoration: underline;/*有下划线*/
+}
+/*天猫专卖链接鼠标悬停状态*/
+div.productUnit a.tmallLink:hover{
+   text-decoration: underline;/*有下划线*/
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*成交，评价，旺旺所在的div*/
+div.productUnit div.productInfo{
+   border-top-width: 1px;/*上边框宽度1px*/
+   border-top-style: solid;/*上边框宽度实线*/
+   border-top-color: #EEEEEE;/*上边框颜色*/
+   color:#999999;/*文字颜色#999999*/
+}
+/*月成交数量*/
+div.productUnit span.productDealNumber{
+   font-weight: bold;/*粗体*/
+   color: #B57C5B;/*字体颜色: #B57C5B*/
+}
+/*评价所在span*/
+div.productUnit span.productReview{
+   border-left-width: 1px;/*左边框宽度1px*/
+   border-left-style: solid;/*左边框实线*/
+   border-left-color: #EEEEEE;/*左边框颜色#EEEEEE*/
+   border-right-width: 1px;/*右边框宽度1px*/
+   border-right-style: solid;/*右边框实线*/
+   border-right-color: #EEEEEE;/*右边框颜色#EEEEEE*/
+}
+/*评价数量*/
+div.productUnit span.productReviewNumber{
+   font-weight: bold;/*粗体*/
+   color: #3388BB;/*字体颜色: #3388BB*/
+}
+/*月成交和评价所在span*/
+div.productUnit span.monthDeal, div.productUnit span.productReview{
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 90px;/*宽度: 90px*/
+   height:29px;/*高度: 29px*/
+   padding-top: 5px;/*上内边距: 5px*/
+   padding-left: 5px;/*左内边距: 5px*/
+}
+/*旺旺所在span*/
+div.productUnit span.wangwang{
+   padding-left: 3px;/*左内边距: 3px*/
+}
+/******************************************************************homePage/categoryWithCarousel1*/
+/*分类和轮播总体div*/
+div.categoryWithCarousel{
+   width: 100%;/*宽度100%*/
+   position:relative;/*把这个div设计为相对定位，是因为在后面的carouselBackgroundDiv是居于这个div进行绝对定位的。*/
+}
+/*导航条*/
+div.categoryWithCarousel div.headbar{
+   background-color: #DD2727;/*背景色比天猫红淡一点*/
+}
+/*导航条中的商品分类字样*/
+div.categoryWithCarousel div.head{
+   background-color: #C60A0A;/*背景色比导航条深一点*/
+   width: 200px;/*宽度200px*/
+   height: 36px;/*高度36px*/
+   font-size: 16px;/*字体大小16px*/
+   font-weight: bold;/*粗体*/
+   color: white;/*文字白色*/
+   margin-left: 20px;/*左边距20px*/
+   line-height: 36px;/*行高36px,这样文字可以垂直居中*/
+   display: inline-block;/*设置为内联块，即可以做到不换行水平摆放，也可以设置大小*/
+}
+/*导航条右侧子菜单*/
+div.categoryWithCarousel div.rightMenu{
+   display: inline-block;/*右侧子菜单设置为内联块，即可以做到不换行水平摆放，也可以设置大小*/
+}
+/*导航中的超链*/
+div.categoryWithCarousel div.rightMenu a{
+   font-size: 16px;/*文字大小16px*/
+   color: white;/*文字颜色白色*/
+   text-decoration:none;/*没有下划线*/
+}
+/*导航中的span*/
+div.categoryWithCarousel div.rightMenu span{
+   margin: 0px 20px 0px 20px;/*文字之间的距离20px*/
+}
+/*天猫超市和天猫国际图片*/
+div.categoryWithCarousel div.rightMenu img{
+   height: 30px;/*高度30px，把图片变小*/
+}
+/*轮播div*/
+div.carousel-of-product{
+   width:1024px;/*宽度1024px,设置宽度是为了配合下面的margin实现居中效果*/
+   height: 510px;/*高度510px*/
+   margin:0px auto;/*元素居中*/
+}
+/*轮播中的图片*/
+img.carouselImage{
+   height: 510px !important;/*图片的高度设置为和轮播div的高度一样*/
+}
+/*和图片一样颜色的背景div (当高分辨率，比如1920px的时候会看见，不然会被轮播遮挡)*/
+div.carouselBackgroundDiv{
+   width:100%;/*宽度100%*/
+   height:510px;/*高度510px*/
+   background-color:#E8E8E8;/*背景色和图片的背景色一致*/
+   position:absolute;/*绝对定位*/
+   top:36px;/*向下移动36px*/
+   z-index:-1;/*表示在轮播图片的下方*/
+}
+/**************************************猫耳朵效果************************************/
+/*使得猫耳朵图片隐藏并且是绝对定位状态*/
+img.catear{
+   position:absolute;
+   height:15px;
+   display: none;
+}
+/******************************************************************homePage/categoryWithCarousel2*/
+/*分类菜单div*/
+div.categoryMenu {
+	width: 200px; /*宽度200px*/
+	background-color: #e2e2e3; /*背景色*/
+	margin-left: 20px; /*左外边距*/
+	position: absolute; /*绝对定位*/
+	left: 0; /*紧靠左边*/
+	top: -560px; /*紧靠上面*/
+	z-index: 1; /*因为这个菜单会和轮播重叠在一起，为了使得这个菜单变得可以点击，需要使用z-index,把它放在"上面"*/
+}
+/*菜单中的连接*/
+div.categoryMenu a {
+	color: #000; /*颜色黑色*/
+}
+/*菜单中的连接悬停状态*/
+div.categoryMenu a:hover {
+	color: lightskyblue; /*悬停时候变成天蓝色*/
+	text-decoration: none; /*去掉下划线*/
+}
+/*分类对应的推荐商品列表*/
+div.productsAsideCategorys {
+	width: 800px; /*宽度800*/
+	height: 510px; /*高度510,510这个高度，刚好和轮播的高度一样，所以当显示的时候，就恰好把轮播遮挡起来*/
+	background-color: white; /*背景白色*/
+	margin-left: 220px; /*左外边距220刚好接着左边的菜单*/
+	position: absolute; /*绝对定位*/
+	left: 0; /*贴在左边(左外边距在此基础上起作用)*/
+	top: -560px; /*贴在上面*/
+	z-index: 1;
+	display:none;
+	/*因为这个产品列表div会和轮播重叠在一起，为了使得这个菜单变得可以点击，需要使用z-index,把它放在"上面"*/
+}
+/*商品列表中的每一行*/
+div.productsAsideCategorys div.row {
+	margin: 20px 80px 0px 80px; /*左右外边距80px,上外边距20px*/
+}
+/*每一行的分隔符*/
+div.productsAsideCategorys div.row div.seperator {
+	margin-top: 20px; /*上外边距20px*/
+	border-bottom-style: dashed; /*下边框虚线*/
+	border-bottom-width: 1px; /*下边框1个像素*/
+	border-bottom-color: #e7e7e7; /*下边框颜色*/
+}
+/*商品连接*/
+div.productsAsideCategorys a {
+	color: #999; /*商品连接颜色灰色*/
+	font-size: 14px; /*大小14px*/
+	margin: 8px; /*外边距8px*/
+}
+/*商品连接悬停状态*/
+div.productsAsideCategorys a:hover {
+	color: #C40000; /*悬停呈现天猫红*/
+	text-decoration: none; /*没有下划线*/
+}
+/*每个分类*/
+div.eachCategory {
+	line-height: 30px; /*文字垂直居中*/
+	padding-left: 10px; /*左内边距10px*/
+	font-size: 14px; /*大小14px*/
+}
+/*每个分类前面的小图标*/
+div.eachCategory span {
+	margin-right: 10px; /*图标和文字之间有10px距离*/
+}
+/*分类div悬停状态*/
+div.eachCategory:hover {
+	background-color: white; /*背景色改成白色，感觉就和右边的产品列表连在一起了*/
+}
+/******************************************************************homePage/homepageCategoryProducts*/
+/*整体的产品列表div*/
+div.homepageCategoryProducts{
+   background-color: #F5F5F5;/*背景色*/
+   padding: 50px 10px 50px 10px;/*内边距上下50px，左右10px*/
+   margin: 10px auto;/*居中*/
+   max-width: 1013px;/*最大宽度1013px，如果用户的分辨率比较大，那么就会使产品列表整体宽度最大1013，并且居中，这样看上去好一点，而不是铺满整个屏幕*/
+   position:relative;
+   top:-25px;
+}
+/*产品项*/
+div.productItem{
+   width: 189px;/*宽度*/
+   height: 285px;/*高度*/
+   border: 1px solid white;/*边框*/
+   background-color: white;/*背景色*/
+   margin: 8px 4px;/*外边距*/
+   float: left;/*向左漂浮，这样使得所有的产品项可以水平摆放*/
+   cursor: pointer;/*鼠标指正变成点击状态*/
+}
+/*图片*/
+div.productItem img{
+   width: 187px;/*宽度*/
+   height: 190px;/*高度*/
+}
+/*产品图片鼠标悬停状态*/
+div.productItem img:hover{
+   opacity: 0.7;/*变亮*/
+   filter: alpha(opacity = 70);/*火狐浏览器下的变亮*/
+}
+/*产品描述信息*/
+div.productItem span.productItemDesc{
+   font-size: 12px;/*字体*/
+   color: #666666;/*颜色*/
+   display: block;/*以块状显示，自动换行*/
+   padding: 16px;/*内边距*/
+}
+/*产品超链*/
+a.productItemDescLink{
+   display: inline-block;/*显示为内联*/
+   height: 66px;/*高度66px*/
+   
+}
+/*产品价格*/
+div.productItem span.productPrice{
+   font-size: 16px;/*字体大小*/
+   color: #FF003A;/*颜色*/
+   display: block;/*以块状显示，自动换行*/
+   padding-left: 16px;/*左内边距*/
+   margin-top: -10px;/*上外边距*/
+}
+/*一个分类下5个产品为一个div*/
+div.eachHomepageCategoryProducts{
+   margin: 0px 0px 40px 0px;/*下外边距40px*/
+}
+/*分类名称*/
+span.categoryTitle{
+   font-size: 16px;/*字体大小*/
+   margin-left: 30px;/*左外边距30px*/
+   color: #646464;/*颜色*/
+   font-weight: bold;/*粗体*/
+}
+/*竖状条*/
+div.left-mark{
+display: inline-block;/*显示为内联元素*/
+height: 20px;/*高度20px*/
+vertical-align: top;/*垂直居顶*/
+width: 5px;/*宽度5px*/
+background-color: #19C8A9;/*背景色*/
+}
+/*最下方"END"字样图片*/
+div.homepageCategoryProducts img.endpng{
+   display: block;/*显示为块级，为了居中效果*/
+   width: 82px;/*宽度*/
+   margin: 0 auto;/*居中*/
+}
+/******************************************************************simpleSearch*/
+/*简单搜索栏*/
+div.simpleSearchDiv{
+   background-color: #C40000;/*背景色天猫红*/
+   display: block;/*用块状显示，只有使用块状显示的时候，上下外边距才会生效*/
+   width: 300px;/*宽度300px*/
+   height: 40px;/*高度40px*/
+   margin: 10px 20px 40px;/*外边距*/
+   padding: 1px;/*内边距1px*/
+}
+
+/*输入框*/
+div.simpleSearchDiv input{
+   width: 225px;/*按钮宽度225px*/
+   height: 34px;/*高度34px*/
+   border: 1px solid transparent;/*边框透明不然会有阴影，看上去就不是嵌进去的*/
+   margin: 2px;/*外边距2px，显得和外面的div有一定的距离*/
+   outline:none;/*去掉输入框轮廓，否则获取焦点的时候会发生颜色变化*/
+}
+
+/*搜天猫按钮*/
+div.simpleSearchDiv button{
+   width: 60px;/*按钮宽度60px*/
+   border: 1px solid #C40000;/*边框透明不然会有阴影，看上去就不是嵌进去的*/
+   background-color: #C40000;/*背景色天猫红，和div的背景色一样，按钮轮廓就会消失*/
+   color: white;/*文字颜色白色*/
+   font-size: 14px;/*文字大小*/
+   /* font-weight:bold */;/*首页的搜索框字体是粗体，这里没有使用*/
+   outline:none;
+}
+
+/*关键字所在div*/
+div.searchBelow{
+   margin-top: 3px;/*下方关键字所在的div，上外边距*/
+   margin-left: -20px;/*左边距，结合超链的内边距，正好使得超链出现在开始的位置*/
+}
+
+/*关键字之间的|*/
+div.searchBelow span{
+   color: #999;/*设置为灰色*/
+}
+
+/*关键字超链*/
+div.searchBelow a{
+   padding: 0px 20px 0px 20px;/*超链的左右内编剧*/
+   font-size: 14px;/*超链文字大小*/
+}
+
+/*logo图片*/
+img.simpleLogo{
+   position: absolute;/*logo图片使用绝对定位*/
+   left: 10px;/*左边距离*/
+   top: 50px;/*上方距离*/
+   width: 140px;/*宽度*/
+}
+/******************************************************************registerPage/registerPage*/
+/*注册页面div*/
+div.registerDiv{
+   margin: 10px 20px;/*外边距*/
+   text-align: center;/*文本水平居中*/
+}
+/*注册表格*/
+table.registerTable{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   font-size: 16px;/*字体大小: 16px*/
+   table-layout: fixed;/*表格布局，单元格的宽度取设置的值*/
+   margin-top: 50px;/*上外边距: 50px*/
+}
+/*单元格*/
+table.registerTable td{
+   padding: 10px 30px;/*内边距*/
+}
+/*输入框*/
+table.registerTable input{
+   border: 1px solid #DEDEDE;/*边框*/
+   width: 213px;/*宽度: 213px*/
+   height: 36px;/*高度: 36px*/
+   font-size: 14px;/*字体大小: 14px*/
+}
+/*提交按钮*/
+table.registerTable button{
+   width: 170px;/*宽度: 170px*/
+   height: 36px;/*高度: 36px*/
+   border-radius: 2px;/*圆角*/
+   color: white;/*字体颜色: white*/
+   background-color: #C40000;/*背景色: #C40000*/
+   border-width: 0px;/*无边框*/
+}
+/*提示文字*/
+td.registerTip{
+   font-weight: bold;/*粗体*/
+}
+/*左侧单元格*/
+td.registerTableLeftTD{
+   width: 300px;/*宽度: 300px*/
+   text-align: right;/*文本居右*/
+}
+/*右侧单元格*/
+td.registerTableRightTD{
+   width: 300px;/*宽度: 300px*/
+   text-align: left;/*文本居左*/
+}
+/*注册按钮*/
+td.registerButtonTD{
+   text-align: center;/*文本水平居中*/
+}
+div.ErrorMessageDiv{
+    width:300px;
+    margin:0 auto;
+    visibility:hidden;
+}
+/******************************************************************registerPage/Success*/
+div.registerSuccessDiv {
+	margin: 10px 20px;
+	background-color: #F3FDF6;
+	border: 1px solid #DEF3E6;
+	font-size: 16px;
+	color: #3C3C3C;
+	padding: 20px 130px;
+}	
+/******************************************************************loginPage/loginPage*/
+/*天猫图标logo所在div*/
+div.simpleLogo{
+    padding: 32px 0px;/*上下内边距*/
+}
+/*海贼王背景图片*/
+img.loginBackgroundImg{
+   display: block;/*以块状显示，自动换行, 并且可以修改宽度*/
+   margin: 0px auto;/*本元素居中显示*/
+}
+/*登录框div*/
+div.loginSmallDiv{
+   background-color: white;/*背景色: white*/
+   position: absolute;/*绝对定位*/
+   right: 190px;/*距离右边80px*/
+   top: 180px;/*向下移动180px*/
+   width: 350px;/*宽度: 350px*/
+   height: 400px;/*高度: 400px*/
+   padding: 20px 25px 80px 25px;/*内边距*/
+}
+/*账号登录字样*/
+div.login_acount_text{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+}
+/*登录按钮*/
+button.redButton{
+   color: white;/*字体颜色: white*/
+   background-color: #C40000;/*背景色: #C40000*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+}
+div.ErrorMessageDiv{
+    width:300px;
+    margin:0 auto;
+    visibility:hidden;
+}
+/******************************************************************categoryPage/categoryPage*/
+/**********************categoryProducts.htm**********/
+/**********************categorySortBar.htm**********/
+/*整个分类div*/
+div.categoryPageDiv{
+   max-width: 1013px;/*最大宽度1013px，如果用户的分辨率比较大，那么就会使产品列表整体宽度最大1013，并且居中，这样看上去好一点，而不是铺满整个屏幕*/
+   margin: 10px auto;/*居中显示*/
+}
+/*排序按钮栏*/
+div.categorySortBar{
+   background-color: #FAF9F9;/*背景色: #FAF9F9*/
+   margin: 40px 20px 20px 20px;/*外边距*/
+   padding: 4px;/*内边距 4px*/
+}
+/*排序栏中的两个表格*/
+table.categorySortBarTable{
+   border-collapse: collapse;/*单元格之间没有空隙*/
+   display:inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+}
+/*排序表格中的Bootstrap图标*/
+table.categorySortBarTable span.glyphicon{
+   font-size: 10px;/*字体大小: 10px*/
+}
+/*排序表格中的单元格*/
+table.categorySortBarTable td{
+   height:17px;/*高度:17px*/
+   font-size:12px;/*字体大小:12px*/
+   border:1px solid #CCCCCC;/*边框*/
+   padding:3px;/*内边距 3px*/
+}
+/*默认选中的那个单元格*/
+table.categorySortBarTable td.grayColumn{
+   background-color: #F1EDEC;/*背景色: #F1EDEC*/
+}
+/*超链*/
+table.categorySortBarTable td a{
+   color: #806F66;/*字体颜色: #806F66*/
+}
+/*超链鼠标悬浮状态*/
+table.categorySortBarTable td a:hover{
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*价格区间输入框*/
+table.categorySortBarTable input{
+   border-width: 0px;/*隐藏边框*/
+   height: 15px;/*高度: 15px*/
+   width: 50px;/*宽度: 50px*/
+}
+/*价格区间中间的棒棒*/
+able.categorySortBarTable td.priceMiddleColumn{
+   width: 5px;/*宽度: 5px*/
+   vertical-align: middle;/*垂直居中*/
+   color: #CCCCCC;/*字体颜色: #CCCCCC*/
+}
+/*几个排序按钮所在td鼠标悬停状态*/
+table.categorySortTable td:hover{
+   background-color: #F1EDEC;/*背景色: #F1EDEC*/
+}
+/******************************************************************productPage/productImages*/
+/*图片和基本信息所在的div*/
+div.imgAndInfo {
+	margin: 40px 20px; /*外边距*/
+}
+/*图片所在的div*/
+div.imgInimgAndInfo {
+	width: 400px; /*宽度: 400px*/
+	float: left; /*向左漂浮，这样可以水平摆放，为的是和右边的基本信息保持水平摆放关系。*/
+}
+/*大图片*/
+div.imgAndInfo img.bigImg {
+	width: 400px; /*宽度: 400px*/
+	height: 400px; /*高度: 400px*/
+	padding: 20px; /*内边距*/
+	border: 1px solid #F2F2F2; /*边框*/
+}
+/*小图片所在的div*/
+div.imgAndInfo div.smallImageDiv {
+	width: 80%; /*宽度: 80%*/
+	margin: 20px auto; /*居中显示*/
+}
+/*小图片*/
+div.imgAndInfo img.smallImage {
+	width: 60px; /*宽度: 60px*/
+	height: 60px; /*高度: 60px*/
+	border: 2px solid white; /*边框设置为2个像素白色，鼠标悬浮的时候就会设置为黑色*/
+}
+/*小图片鼠标悬浮效果*/
+div.imgAndInfo img.smallImage:hover {
+	border: 2px solid black; /*边框设置为2个像素黑色*/
+}
+/******************************************************************productPage/productInfos*/
+/*基本信息div*/
+div.infoInimgAndInfo {
+	padding: 0px 20px; /*左右内边距20px*/
+	overflow: hidden;
+	/*隐藏溢出部分。 结合图片div的float:left,就可以做到基本信息div和图片div水平摆放，并且基本信息div自动占用剩下所有的宽度*/
+}
+/*产品标题*/
+div.infoInimgAndInfo div.productTitle {
+	color: black; /*字体颜色: black*/
+	font-size: 16px; /*字体大小: 16px*/
+	font-weight: bold; /*粗体*/
+	margin: 0px 10px; /*水平外边距10px*/
+}
+/*产品小标题*/
+div.infoInimgAndInfo div.productSubTitle {
+	color: #DD2727; /*字体颜色: #DD2727*/
+	font-size: 12px; /*字体大小: 12px*/
+	margin: 0px 10px; /*水平外边距10px*/
+}
+/*聚划算div*/
+div.infoInimgAndInfo div.juhuasuan {
+	background-color: #2DA77A; /*背景色: #2DA77A*/
+	color: white; /*字体颜色: white*/
+	text-align: center; /*文本水平居中*/
+	line-height: 40px; /*文本垂直居中*/
+	margin-top: 10px; /*上外边距: 10px*/
+}
+/*聚划算几个大字*/
+div.infoInimgAndInfo span.juhuasuanBig {
+	font-size: 18px; /*字体大小: 18px*/
+	font-weight: bold; /*粗体*/
+	font-family: 黑体; /*字体黑体*/
+}
+/*聚划算日期*/
+div.infoInimgAndInfo span.juhuasuanTime {
+	color: #FFC057; /*字体颜色: #FFC057*/
+	font-weight: bold; /*粗体*/
+}
+/*产品价格信息*/
+div.infoInimgAndInfo div.productPriceDiv {
+	background-image:
+		url(http://how2j.cn/tmall/img/site/priceBackground.png); /*背景图片*/
+	height: 102px; /*高度: 102px*/
+	padding: 10px; /*内边距10px*/
+	color: #666666; /*字体颜色: #666666*/
+}
+/*购物卷div*/
+div.infoInimgAndInfo div.gouwujuanDiv {
+	margin-top: 5px; /*上外边距: 5px*/
+}
+/*原始价格所在div*/
+div.infoInimgAndInfo div.originalDiv {
+	margin-top: 5px; /*上外边距: 5px*/
+}
+/*原始价格文字*/
+div.infoInimgAndInfo span.originalPriceDesc {
+	color: #999999; /*字体颜色: #999999*/
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	width: 68px; /*宽度: 68px*/
+}
+/*原始价格-价格数字*/
+div.infoInimgAndInfo span.originalPrice {
+	font-family: Arial; /*字体Arial*/
+	font-size: 12px; /*字体大小: 12px*/
+	color: #333333; /*字体颜色: #333333*/
+	text-decoration: line-through; /*删除线*/
+}
+/*促销价格 人民币标示*/
+div.infoInimgAndInfo span.promotionPriceYuan {
+	font-family: Arial; /*字体Arial*/
+	font-size: 18px; /*字体大小: 18px*/
+	color: #C40000; /*字体颜色: #C40000*/
+}
+/*促销价格-价格数字*/
+div.infoInimgAndInfo span.promotionPrice {
+	color: #c40000; /*字体颜色: #c40000*/
+	font-family: Arial; /*字体Arial*/
+	font-size: 30px; /*字体大小: 30px*/
+	font-weight: bold; /*粗体*/
+}
+/*促销价格文字*/
+div.infoInimgAndInfo span.promotionPriceDesc {
+	color: #999999; /*字体颜色: #999999*/
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	width: 68px; /*宽度: 68px*/
+	position: relative; /*相对定位*/
+	left: 0px; /*水平不动*/
+	top: -10px; /*垂直向上移动10px*/
+}
+/*销量和累计评价共同的div*/
+div.infoInimgAndInfo div.productSaleAndReviewNumber {
+	margin: 20px 0px; /*上下外边距20px*/
+	border-top-style: dotted; /*上边框虚线*/
+	border-top-color: #C9C9C9; /*上边框颜色*/
+	border-top-width: 1px; /*上边框宽度1px*/
+	border-bottom-style: dotted; /*下边框虚线*/
+	border-bottom-color: #C9C9C9; /*下边框颜色*/
+	border-bottom-width: 1px; /*下边框宽度1px*/
+	padding: 10px; /*内边距10px*/
+}
+/*销量和累计评价分别的div*/
+div.infoInimgAndInfo div.productSaleAndReviewNumber div {
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	width: 49%; /*宽度: 49%*/
+	text-align: center; /*文本居中*/
+	color: #999999; /*字体颜色: #999999*/
+	font-size: 12px; /*字体大小: 12px*/
+}
+/*销量所处的div*/
+div.infoInimgAndInfo div.productSaleAndReviewNumber div:first-child {
+	border-right-width: 1px; /*右边框宽度1px*/
+	border-right-style: solid; /*右边框实线*/
+	border-right-color: #E5DFDA; /*右边框颜色*/
+}
+/*产品数量和库存所在div*/
+div.infoInimgAndInfo div.productNumber {
+	color: #999999; /*字体颜色: #999999*/
+}
+/*输入数字的input所在的span*/
+div.infoInimgAndInfo span.productNumberSettingSpan {
+	border: 1px solid #999; /*边框*/
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	width: 43px; /*宽度: 43px*/
+	height: 32px; /*高度: 32px*/
+	padding-top: 7px; /*上内边距 7px，把input顶下去*/
+}
+/*输入数字的input*/
+div.infoInimgAndInfo input.productNumberSetting {
+	border: 0px; /*无边框*/
+	height: 80%; /*高度: 80%*/
+	width: 80%; /*宽度: 80%*/
+}
+/*上下箭头所使用的图片*/
+div.productNumber span.updown img {
+	display: inline-block; /*设置成内联块，可以调整其垂直向上对齐*/
+	vertical-align: top;
+	/*确保垂直向上对齐，因为在不同的浏览器下，img元素可能表现出不贴在上面的现象。 贴在上面之后，再借助其所在span的内边距的padding-top就可以很方便的调整其位置*/
+}
+/*上下箭头所在的两个span*/
+div.productNumber span.updown {
+	border: 1px solid #999; /*边框*/
+	display: block; /*以块状显示，自动换行*/
+	width: 20px; /*宽度: 20px*/
+	height: 14px; /*高度: 14px*/
+	text-align: center; /*水平居中*/
+	padding-top: 4px; /*上内边距 4px*/
+}
+/*上下箭头中间的span*/
+div.productNumber span.updownMiddle {
+	height: 4px; /*高度: 4px*/
+	display: block; /*以块状显示，自动换行*/
+}
+/*上下箭头图标所在的span的父span*/
+div.productNumber span.arrow {
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	width: 22px; /*宽度: 22px*/
+	height: 32px; /*高度: 32px*/
+	vertical-align: top; /*垂直贴在上面*/
+}
+/*服务承诺信息所在div*/
+div.serviceCommitment {
+	margin: 20px 0px; /*上下外边距20px*/
+}
+/*服务承诺四个字所在span*/
+div.infoInimgAndInfo span.serviceCommitmentDesc {
+	color: #999999; /*字体颜色: #999999*/
+}
+/*服务承诺右侧四个连接所在span*/
+div.infoInimgAndInfo span.serviceCommitmentLink a {
+	color: #666666; /*字体颜色: #666666*/
+}
+/*立即购买和加入购物车所在div*/
+div.buyDiv {
+	margin: 20px auto; /*div本身居中显示*/
+	text-align: center; /*内容水平居中显示*/
+}
+/*立即购买和加入购物车按钮*/
+div.buyDiv button {
+	display: inline-block; /*显示为内联，既可以设置大小，又能够不换行*/
+	margin: 0px 10px; /*左右外边距10px*/
+	width: 180px; /*宽度: 180px*/
+	height: 40px; /*高度: 40px*/
+}
+/*立即购买按钮*/
+button.buyButton {
+	border: 1px solid #C40000; /*边框*/
+	background-color: #FFEDED; /*背景色: #FFEDED*/
+	text-align: center; /*内容水平居中*/
+	line-height: 40px; /*内容垂直居中*/
+	font-size: 16px; /*字体大小: 16px*/
+	color: #C40000; /*字体颜色: #C40000*/
+	font-family: arial; /*字体arial*/
+}
+/*加入购物车按钮*/
+button.addCartButton {
+	border: 1px solid #C40000; /*外边框*/
+	background-color: #C40000; /*背景色: #C40000，和外边框一个颜色*/
+	text-align: center; /*内容水平居中*/
+	line-height: 40px; /*内容垂直居中*/
+	font-size: 16px; /*字体大小: 16px*/
+	color: white; /*字体颜色: white*/
+	font-family: arial; /*字体arial*/
+}
+/*加入购物车前的图标*/
+button.addCartButton span.glyphicon {
+	font-size: 12px; /*字体大小: 12px*/
+	margin-right: 8px; /*右外边距8px*/
+}
+/*销量和累计评价后的数字*/
+.redColor {
+	color: #C40000; /*字体颜色: #C40000*/
+}
+/*销量和累计评价后的数字*/
+.boldWord {
+	font-weight: bold; /*粗体*/
+}
+/******************************************************************productPage/detailAndReview*/
+/********productdetaill*********/
+div.productDetailDiv{
+    width: 790px;
+    margin: 40px auto;
+}
+div.productDetailTopPart{
+    border: 1px solid #DFDFDF;
+    border-left-width: 0px;
+    cursor:pointer;
+}
+a.selected{
+    border-left: 1px solid #cfbfb1;
+    border-right: 1px solid #cfbfb1;
+    color: #b10000;
+    display: inline-block;
+    font-weight: bold;
+    line-height: 46px;
+    width: 90px;
+    text-align: center;
+    position: relative;
+    cursor:pointer;
+    text-decoration: none;
+}
+a.selected:before{
+    border-color: #b00000;
+    border-style: solid;
+    border-width: 1px;
+    content: "";
+    display: block;
+    width: 90px;
+    height: 0;
+    position: absolute;
+    top: -1px;
+    margin-left: -1px;
+    background-color:#b00000;
+}
+a.selected:after{
+    border-color: #b00000 transparent transparent;
+    border-style: solid;
+    border-width: 5px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: -1px;
+    left: 50%;
+    margin-left: -5px;
+}
+a.productDetailTopReviewLink{
+    padding: 0px 20px;
+    border-right: 1px dotted #D2D2D2;
+    color: #333333;
+    text-decoration: none;
+}
+div.productReviewDiv{
+    width: 790px;
+    margin: 40px auto;
+}
+div.productReviewTopPart{
+    border: 1px solid #DFDFDF;
+    
+}
+a.productReviewTopPartSelectedLink{
+    padding: 0px 20px;
+    color: #333333;
+    cursor:pointer;
+    text-decoration: none;
+}
+
+span.productDetailTopReviewLinkNumber{
+    color: #3355B9;
+}
+div.productParamterPart{
+    border: 1px solid #DFDFDF;
+    padding: 40px;
+}
+div.productParamter{
+    color: #999999;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+div.productParamterList span{
+    display: block;
+    width: 220px;
+    float: left;
+    padding: 8px 0px;
+    color: #666666;
+}
+div.productDetailImagesPart img{
+    display: block;
+    width: 790px;
+    margin:20px 0px;
+}
+div.productReviewContentPart{
+    padding-top: 50px;
+}
+div.productReviewItem{
+    border-bottom: 1px solid #E3E3E3;
+    margin: 10px 0px;
+}
+div.productReviewItem div.productReviewItemDesc{
+    width: 80%;
+    display: inline-block;
+    color: #333333;
+    margin: 5px 20px;
+    float: left;
+}
+div.productReviewItemDate{
+    margin: 15px 0px 0px 0px;
+    color: #CCCCCC;
+}
+div.productReviewItem div.productReviewItemUserInfo{
+    color: #404040;
+    margin: 5px 20px;
+    padding: 20px 0;
+}
+span.userInfoGrayPart{
+    color: #999999;
+}
+/******************************************************************buyPage/buyAndProductJS*/
+/*buyPage.html*/
+/*结算页面div*/
+div.buyPageDiv{
+   margin: 20px auto;/*本元素居中显示*/
+   max-width: 1013px;/*最大宽度1013px*/
+}
+/*地址div*/
+div.address{
+   margin: 20px 5px;/*外边距*/
+   text-align: left;/*文本居左*/
+}
+/*输入收货地址几个字*/
+div.addressTip, div.productListTip{
+   color: #333333;/*字体颜色: #333333*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+   text-align: left;/*文本居左*/
+   margin-bottom: 30px;/*下外边距30px*/
+}
+/*地址信息表格*/
+table.addressTable{
+   margin: 20px 20px;/*外边距*/
+   width: 600px;/*宽度: 600px*/
+   font-size:12px;/*字体大小*/
+}
+/*单元格*/
+table.addressTable td{
+   color: #333333;/*字体颜色: #333333*/
+   text-align: right;/*文本居右*/
+   vertical-align: top;/*垂直局顶*/
+   padding-right: 5px;/*右内边距*/
+   text-align: left;/*文本居左*/
+   height: 30px;/*高度: 30px*/
+}
+/*第一列*/
+table.addressTable td.firstColumn{
+   width: 100px;/*宽度: 100px*/
+}
+/*详细地址文本域*/
+table.addressTable td textarea{
+   border: 1px solid #AFAFAF;/*边框*/
+   margin-bottom: 10px;/*下外边距*/
+   width: 400px;/*宽度: 400px*/
+}
+/*输入框*/
+table.addressTable td input{
+   border: 1px solid #AFAFAF;/*边框*/
+   width: 200px;/*宽度: 200px*/
+}
+/*星号*/
+span.redStar{
+   color: red;/*字体颜色: red*/
+   font-size: 8px;/*字体大小: 8px*/
+}
+/*productList.html*/
+/*结算页面div*/
+div.buyPageDiv{
+   margin: 20px auto;/*本元素居中显示*/
+   max-width: 1013px;/*最大宽度1013px*/
+}
+/*确认订单信息几个字*/
+div.productListTip{
+   color: #333333;/*字体颜色: #333333*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+   text-align: left;/*文本居左*/
+   margin-bottom: 30px;/*下外边距30px*/
+}
+/*产品列表所在table*/
+table.productListTable{
+   width: 100%;/*宽度: 100%*/
+   border-collapse: separate;/*边框折叠*/
+   font-size:12px;/*字体大小:12px*/
+}
+/*天猫图片*/
+img.tmallbuy{
+   width: 15px;/*宽度: 15px*/
+}
+/*标题栏下的下划线*/
+table.productListTable tr.rowborder td{
+   background-color: #b2d1ff;/*背景色: #b2d1ff*/
+   border-right: 2px solid #fff;/*右边框变白色*/
+   height: 3px;/*高度: 3px*/
+}
+/*标题栏的每个单元格*/
+table.productListTable th{
+   color: #999999;/*字体颜色: #999999*/
+   font-family: 宋体;/*字体*/
+   font-weight: normal;/*无粗体*/
+   font-size: 12px;/*字体大小: 12px*/
+   text-align: center;/*文本水平居中*/
+   padding-bottom: 5px;/*下内边距 5px*/
+}
+/*标题栏第一列*/
+th.productListTableFirstColumn{
+   text-align: left !important;/*左对齐*/
+}
+/*天猫店铺超链*/
+a.marketLink{
+   color: black;/*字体颜色: black*/
+   font-size: 12px;/*字体大小: 12px*/
+   font-family: 宋体;/*字库 宋体*/
+   font-weight: normal;/*正常大小*/
+}
+/*天猫店铺超链悬停状态*/
+a.marketLink:hover{
+   color: black;/*字体颜色: black*/
+   font-size: 12px;/*字体大小: 12px*/
+   text-decoration: underline;/*有下划线*/
+   font-family: 宋体;/*字库宋体*/
+   font-weight: normal;/*正常大小*/
+}
+/*旺旺图标*/
+span.wangwangGif{
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 25px;/*宽度: 25px*/
+   height: 25px;/*高度: 25px*/
+   background-image:url(http://how2j.cn/tmall/img/site/wangwang.gif);/*背景图片*/
+   background-repeat: no-repeat;/*背景图片无重复*/
+   background-color: transparent;/*背景色: 透明*/
+   background-attachment: scroll;/*滚动背景图片*/
+   background-position: -83px -0px;/*向上滚动83个像素*/
+   position: relative;/*相对定位*/
+   top: 8px;/*向下移动8个像素*/
+   left: 2px;/*向右移动2个像素*/
+}
+/*产品列表单元格*/
+tbody.productListTableTbody td{
+   text-align: center;/*文本水平居中*/
+}
+/*产品图片*/
+img.orderItemImg{
+   width: 50px;/*宽度: 50px*/
+   height: 50px;/*高度: 50px*/
+   border: 1px solid #E9E9E9;/*边框*/
+}
+/*产品信息*/
+td.orderItemProductInfo{
+   text-align:left !important;/*文本居左*/
+}
+/*产品超链*/
+a.orderItemProductLink{
+   color: #666666;/*字体颜色: #666666*/
+   display: block;/*以块状显示，自动换行, 并且可以修改宽度*/
+}
+/*产品超链悬停状态*/
+a.orderItemProductLink:hover{
+   color: #666666;/*字体颜色: #666666*/
+   text-decoration: underline;/*有下划线*/
+}
+/*3个图标*/
+td.orderItemProductInfo img{
+   height: 16px;/*高度: 16px*/
+}
+/*产品信息单元格*/
+tr.orderItemTR td{
+   border-bottom: 1px solid #E5E5E5;/*下边框*/
+}
+/*订单项单元格*/
+tr.orderItemTR td{
+   padding: 10px 0px;/*上下内边距*/
+}
+/*产品价格和产品数量*/
+span.orderItemProductPrice, span.orderItemProductNumber{
+   color: #000000;/*字体颜色: #000000*/
+}
+/*小计*/
+span.orderItemUnitSum{
+   color: #CC0000;/*字体颜色: #CC0000*/
+   font-weight: bold;/*粗体*/
+}
+/*产品列表第一列*/
+tbody.productListTableTbody td.orderItemFirstTD{
+   text-align: left;/*文本居左*/
+}
+/*第一列和最后一列*/
+td.orderItemFirstTD, td.orderItemLastTD{
+    border-bottom: 0px solid black !important;/*无下边框*/
+}
+/*普通配送字样*/
+label.orderItemDeliveryLabel{
+   color: #666666;/*字体颜色: #666666*/
+   font-family: 宋体;/*字库*/
+   font-size: 12px;/*字体大小: 12px*/
+   font-weight: normal;/*正常粗细*/
+}
+/*配送方式下拉*/
+select.orderItemDeliverySelect{
+   width: 100px;/*宽度: 100px*/
+   height: 23px;/*高度: 23px*/
+}
+/*合计div*/
+div.orderItemSumDiv{
+   padding: 20px;/*内边距：20px*/
+   border-top: 2px solid #B4D0FF;/*上边框*/
+   background-color: #F2F6FF;/*背景色: #F2F6FF*/
+   height: 50px;/*高度: 50px*/
+}
+/*合计div下所有的span*/
+div.orderItemSumDiv span{
+   color: #999999;/*字体颜色: #999999*/
+}
+/*给卖家留言*/
+span.leaveMessageText{
+   display: inilne-block;/*显示为内联块元素*/
+   margin-right: 10px;/*右外边距*/
+   float: left;/*向左漂浮，这样可以水平摆放*/
+}
+/*实付款所在div*/
+div.orderItemTotalSumDiv{
+   margin: 40px;/*外边距40px*/
+   height: 40px;/*高度: 40px*/
+}
+/*提交订单按钮所在div*/
+div.submitOrderDiv{
+   height: 40px;/*高度: 40px*/
+   margin: 20px 0px;/*上下外边距*/
+}
+/*实付款字样*/
+div.orderItemTotalSumDiv span{
+   color: #999999;/*字体颜色: #999999*/
+}
+/*实付款金额*/
+span.orderItemTotalSumSpan{
+   color: #C40000 !important;/*字体颜色: #C40000 !important*/
+   font-size: 22px;/*字体大小: 22px*/
+   font-weight: bold;/*粗体*/
+   border-bottom: 1px dotted #F2F6FF;/*下边框*/
+}
+/*提交订单按钮*/
+button.submitOrderButton{
+   border: 1px solid #C40000;/*边框*/
+   background-color: #C40000;/*背景色: #C40000*/
+   text-align: center;/*文本水平居中*/
+   line-height: 40px;/*文本垂直居中*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: 700;/*字体粗细*/
+   color: white;/*字体颜色: white*/
+   float: right;/*右浮动*/
+   display:inline-block;/*显示为内联块级元素*/
+   margin:0px 10px;/*水平外边距*/
+   width:180px;/*宽度:180px*/
+   height: 40px;/*高度:40px*/
+}
+/******************************************************************cartPage/cartJS*/
+/*整个购物车div*/
+div.cartDiv{
+   max-width: 1013px;
+   margin: 10px auto;/*本元素居中显示*/
+   color: black;/*字体颜色: black*/
+}
+/*上面的价格信息*/
+span.cartTitlePrice{
+   color: #C40000;/*字体颜色: #C40000*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+   margin-left: 5px;/*左外边距: 5px*/
+   margin-right: 3px;/*右边距3px*/
+}
+/*上面的结算按钮*/
+div.cartTitle button{
+   background-color: #AAAAAA;/*背景色: #AAAAAA*/
+   border: 1px solid #AAAAAA;/*边框和背景色一个颜色*/
+   color: white;/*字体颜色: white*/
+   width: 53px;/*宽度: 53px*/
+   height: 25px;/*高度: 25px*/
+   border-radius: 2px;/*圆角*/
+}
+/*购物车的页脚*/
+div.cartFoot{
+   background-color: #E5E5E5;/*背景色: #E5E5E5*/
+   line-height: 50px;/*文本垂直居中*/
+   margin: 20px 0px;/*上下外边距20px*/
+   color: black;/*字体颜色: black*/
+   padding-left: 20px;/*左内边距: 20px*/
+}
+/*选择框是一个图片，当鼠标放上去呈现点击状*/
+img.cartProductItemIfSelected, img.selectAllItem{
+   cursor: pointer;/*鼠标呈现点击状*/
+}
+/*商品合计数量*/
+span.cartSumNumber{
+   color: #C40000;/*字体颜色: #C40000*/
+   font-weight: bold;/*粗体*/
+   font-size: 16px;/*字体大小: 16px*/
+}
+/*下面的价格*/
+span.cartSumPrice{
+   color: #C40000;/*字体颜色: #C40000*/
+   font-weight: bold;/*粗体*/
+   font-size: 20px;/*字体大小: 20px*/
+}
+/*下面的结算按钮*/
+div.cartFoot button{
+   background-color: #AAAAAA;/*背景色: #AAAAAA*/
+   border: 0px solid #AAAAAA;/*去掉边框*/
+   color: white;/*字体颜色: white*/
+   width: 120px;/*宽度: 120px*/
+   height: 50px;/*高度: 50px*/
+   font-size: 20px;/*字体大小: 20px*/
+   text-align: center;/*文本水平居中*/
+}
+/*商品table*/
+table.cartProductTable{
+   width: 100%;/*宽度: 100%*/
+   font-size:12px;/*字体大小:12px*/
+}
+/*表头信息的每一列*/
+table.cartProductTable th{
+   font-weight: normal;/*正常字体粗细*/
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   padding: 20px 20px;/*内边距*/
+}
+/*最前方的是否选中图片*/
+img.cartProductItemIfSelected, img.selectAllItem{
+   cursor: pointer;/*鼠标呈点击状*/
+}
+/*商品所在的每一行*/
+tr.cartProductItemTR{
+   border: 1px solid #CCCCCC;/*边框*/
+}
+/*商品所在的每一列*/
+tr.cartProductItemTR td{
+   padding: 20px 20px;/*内边距*/
+}
+/*商品图片*/
+img.cartProductImg{
+   padding: 1px;/*内边距*/
+   border: 1px solid #EEEEEE;/*边框*/
+   width: 80px;/*宽度: 80px*/
+   height: 80px;/*高度: 80px*/
+}
+/*图片所在列*/
+table.cartProductTable th.selectAndImage{
+   width:100px;/*宽度:10px*/
+}
+/*最后一列*/
+table.cartProductTable th.operation{
+   width:60px;/*宽度:30px*/
+}
+/*产品连接所在div*/
+div.cartProductLinkOutDiv{
+   position: relative;
+   height: 80px;/*高度: 80px*/
+}
+/*产品连接*/
+a.cartProductLink{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+}
+/*产品连接悬停状态*/
+a.cartProductLink:hover{
+   color: #C40000;/*字体颜色: #C40000*/
+   text-decoration: underline;/*有下划线*/
+}
+/*产品连接下面的三个图标所在div*/
+div.cartProductLinkInnerDiv{
+   position: absolute;/*绝对定位*/
+   bottom: 0;/*贴在下面*/
+   height: 20px;/*高度: 20px*/
+}
+/*原始价格*/
+span.cartProductItemOringalPrice{
+   text-decoration: line-through;/*删除线*/
+   color: #9C9C9C;/*字体颜色: #9C9C9C*/
+   display: block;/*以块状显示，自动换行, 并且可以修改宽度*/
+   font-weight: bold;/*粗体*/
+   font-size: 14px;/*字体大小: 14px*/
+}
+/*促销价格*/
+span.cartProductItemPromotionPrice{
+   font-family: Arial;/*使用Arial字体的目的是为了把￥正常显示出来*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*调整数量div*/
+div.cartProductChangeNumberDiv{
+   border: solid 1px #E5E5E5;/*边框*/
+   width: 80px;/*宽度: 80px*/
+}
+/*增加和减少*/
+div.cartProductChangeNumberDiv a{
+   width: 14px;/*宽度: 14px*/
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   text-align: center;/*文本水平居中*/
+   color: black;/*字体颜色: black*/
+   text-decoration: none;/* 无下划线*/
+}
+/*数量输入框*/
+div.cartProductChangeNumberDiv input{
+   border: solid 1px #AAAAAA;/*边框*/
+   width: 42px;/*宽度: 42px*/
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+}
+/*小计金额*/
+span.cartProductItemSmallSumPrice{
+   font-family: Arial;/*使用Arial字体的目的是为了把￥正常显示出来*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/******************************************************************alipayPage/alipayPage*/
+/*支付页面div*/
+div.aliPayPageDiv{
+   text-align: center;/*文本水平居中*/
+   padding-bottom: 40px;/*下内边距*/
+   max-width: 1013px;/*最大宽度1013px*/
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*支付图片所在div*/
+div.aliPayPageLogo{
+   margin: 20px;/*外边距20px*/
+}
+/*扫一扫付款*/
+span.confirmMoneyText{
+   color: #4D4D4D;/*字体颜色: #4D4D4D*/
+}
+/*金额*/
+span.confirmMoney{
+   display: block;/*以块状显示，自动换行, 并且可以修改宽度*/
+   color: #FF6600;/*字体颜色: #FF6600*/
+   font-weight: bold;/*粗体*/
+   font-size: 20px;/*字体大小: 20px*/
+   margin: 10px;/*外边距10px*/
+}
+/*确认支付按钮*/
+button.confirmPay{
+   background-color: #00AAEE;/*背景色: #00AAEE*/
+   border: 1px solid #00AAEE;/*边框*/
+   text-align: center;/*文本水平居中*/
+   line-height: 31px;/*文本垂直居中*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: 700;/*粗体*/
+   color: white;/*字体颜色: white*/
+   width: 107px;/*宽度: 107px*/
+   margin-top: 20px;/*上外边距: 20px*/
+}
+/******************************************************************payedPage/payedPage*/
+/*支付成功页面*/
+div.payedDiv{
+  border: 1px solid #D4D4D4;/*边框*/
+  max-width: 1013px;/*最大宽度1013px*/
+  margin: 10px auto 20px auto;/*本元素居中显示*/
+}
+/*您已成功付款字样所在div*/
+div.payedTextDiv{
+   height: 61px;/*高度: 61px*/
+   background-color: #ECFFDC;/*背景色: #ECFFDC*/
+   padding: 17px 0px 0px 25px;/*内边距*/
+}
+/*您已成功付款*/
+div.payedTextDiv span{
+   font-weight: bold;/*粗体*/
+   font-size: 14px;/*字体大小: 14px*/
+   margin-left: 10px;/*左外边距: 10px*/
+}
+/*地址信息所在div*/
+div.payedAddressInfo{
+   padding: 26px 35px;/*内边距*/
+}
+/*地址信息列表*/
+div.payedAddressInfo li{
+   background-image:url(http://how2j.cn/tmall/img/site/li_dot.png);/*背景图片*/
+   background-repeat: no-repeat;/*粗重复*/
+   background-color: transparent;/*背景色: transparent*/
+   background-attachment: scroll;/*背景图片滚动*/
+   background-position: 0px 13px;/*向下滚动13px*/
+   list-style-type: none;/*去掉原风格*/
+   color: #333333;/*字体颜色: #333333*/
+   padding-left: 15px;/*左内边距: 15px*/
+   padding-top: 5px;/*上内边距: 5px*/
+}
+/*实付款*/
+span.payedInfoPrice{
+   color: #B10000;/*字体颜色: #B10000*/
+   font-weight: bold;/*粗体*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-family: arial;/*字库*/
+}
+/*查看已买到的宝贝所在div*/
+div.paedCheckLinkDiv{
+   margin-left: 38px;/*左外边距: 38px*/
+}
+/*两个查看连接*/
+a.payedCheckLink{
+   color: #2D8CBA;/*字体颜色: #2D8CBA*/
+}
+/*两个查看连接鼠标悬停状态*/
+a.payedCheckLink:hover{
+   color: #2D8CBA;/*字体颜色: #2D8CBA*/
+   text-decoration: underline;/*有下划线*/
+}
+/*分割线*/
+div.payedSeperateLine{
+   border-top: 1px dotted #D4D4D4;/*上边框*/
+   margin: 0px 31px;/*左右外边距*/
+}
+/*警告div*/
+div.warningDiv{
+   margin: 23px 45px;/*外边距*/
+   color:black;/*文字颜色黑色*/
+}
+/*文字粗体*/
+.boldWord{
+   font-weight: bold;/*粗体*/
+}
+/******************************************************************boughtPage/allJS*/
+/*bought.html*/
+/*订单页面*/
+div.boughtDiv{
+   max-width: 1013px;
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*各种订单类型*/
+div.orderType div{
+   border-bottom: 2px solid #E8E8E8;/*下边框*/
+   float: left;/*向左漂浮，这样可以水平摆放*/
+}
+/*订单类型超链*/
+div.orderType a{
+   border-right: 1px solid #E8E8E8;/*右边框*/
+   display:inline-block;/*显示为内联块，这样下外边距才能生效*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+   color: black;/*字体颜色: black*/
+   margin-bottom: 10px;/*下外边距*/
+   padding: 0px 20px;/*左右内边距*/
+   text-decoration: none;/*无下划线*/
+}
+/*订单类型超链鼠标悬浮*/
+div.orderType a:hover{
+   color: #C40000;/*字体颜色: #C40000*/
+   text-decoration: none;/*无下划线*/
+}
+/*选中的订单类型div*/
+div.orderType div.selectedOrderType{
+   border-bottom: 2px solid #C40000;/*下边框*/
+}
+/*选中的订单类型超链*/
+div.orderType div.selectedOrderType a{
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*右边的空的div*/
+div.orderTypeLastOne{
+   overflow: hidden;/*隐藏滚动条*/
+   float: none !important;/*取消浮动，就会自动出现在右边，并且把剩下的占满*/
+   border-bottom: 2px solid #E8E8E8;/*下边框*/
+   height:35px;/*高度:35px*/
+}
+/*待评估超链*/
+a.noRightborder{
+   border-right-width:0px !important;/*去掉右边框*/
+}
+/*订单列表标题所在表格*/
+table.orderListTitleTable{
+   border: 1px solid #E8E8E8;/*边框*/
+   width: 100%;/*宽度: 100%*/
+   margin: 20px 0px;/*上下外边距*/
+   background-color: #F5F5F5;/*背景色: #F5F5F5*/
+   text-align: center;/*文本水平居中*/
+   font-size:12px;/*字体大小12px*/
+}
+/*订单列表标题*/
+table.orderListTitleTable td{
+   padding: 12px 0px;/*垂直内边距*/
+}
+/*orderListItem.html*/
+/*订单页面div*/
+div.boughtDiv{
+   max-width: 1013px;
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*订单项目所在表格*/
+table.orderListItemTable{
+   border: 2px solid #ECECEC;/*边框*/
+   width: 100%;/*宽度: 100%*/
+   margin: 20px 0px;/*上下外边距*/
+   font-size:12px;/*字体大小12px*/
+}
+/*表格悬停状态*/
+table.orderListItemTable:hover{
+   border: 2px solid #aaa !important;/*边框*/
+}
+/*单元格*/
+table.orderListItemTable td{
+   padding: 8px 10px;/*内边距*/
+}
+/*标题行*/
+tr.orderListItemFirstTR{
+   background-color: #F1F1F1;/*背景色: #F1F1F1*/
+}
+/*旺旺图标*/
+div.orderItemWangWangGif{
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 67px;/*宽度: 67px*/
+   height: 22px;/*高度: 22px*/
+   background-image:url(http://how2j.cn/tmall/img/site/wangwang.gif);/*背景图片*/
+   background-repeat: no-repeat;/*不重复*/
+   background-color: transparent;/*背景色: transparent*/
+   background-attachment: scroll;/*滚动背景图片*/
+   background-position: -0px -0px;/*取背景图片左上角*/
+   position: relative;/*相对定位*/
+   top: 0px;/*垂直不移动*/
+   left: 2px;/*向右移动2px*/
+}
+/*删除列*/
+td.orderItemDeleteTD{
+   text-align: right;/*文本居右*/
+}
+/*删除按钮*/
+span.orderListItemDelete{
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   margin: 0px 10px;/*水平外边距*/
+   color: #999999;/*体颜色: #999999*/
+   font-size: 16px;/*字体大小: 16px*/
+}
+/*产品连接外部div*/
+div.orderListItemProductLinkOutDiv{
+   position: relative;/*相对定位，为的是里面的3个图标所在div，可以使用绝对定位*/
+   height: 80px;/*高度: 80px*/
+}
+/*三个图标所在div*/
+div.orderListItemProductLinkInnerDiv{
+   position: absolute;/*绝对定位*/
+   bottom: 0px;/*贴在下方*/
+}
+/*原始价格*/
+div.orderListItemProductOriginalPrice{
+   color: #999999;/*字体颜色: #999999*/
+   font-size: 14px;/*字体大小: 14px*/
+}
+/*促销价格*/
+div.orderListItemProductPrice{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   font-size: 14px;/*字体大小: 14px*/
+}
+/*数量所在td*/
+td.orderListItemNumberTD{
+   text-align: center;/*文本水平居中*/
+}
+/*订单项所在td*/
+td.orderItemOrderInfoPartTD{
+   border: solid 1px #ECECEC;/*边框*/
+}
+/*数量颜色*/
+span.orderListItemNumber{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+}
+/*价格td*/
+td.orderListItemProductRealPriceTD{
+    text-align: center;/*文本水平居中*/
+}
+/*价格信息*/
+div.orderListItemProductRealPrice{
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+}
+/*运费*/
+div.orderListItemPriceWithTransport{
+   color: #6C6C6C;/*字体颜色: #6C6C6C*/
+   font-size: 12px;/*字体大小: 12px*/
+}
+/*按钮所在td*/
+td.orderListItemButtonTD{
+   text-align: center;/*文本水平居中*/
+}
+/*评价按钮*/
+button.orderListItemReview{
+   border: 1px solid #DCDCDC;/*边框*/
+   background-color: #fff;/*背景色: #fff*/
+   border-radius: 2px;/*圆角*/
+   color: #3C3C3C;/*字体颜色: #3C3C3C*/
+   font-size: 12px;/*字体大小: 12px*/
+   font-weight: bold;/*粗体*/
+   padding: 6px 12px;/*内边距*/
+}
+/*评价按钮鼠标悬浮状态*/
+button.orderListItemReview:hover{
+   border-color: #C40000;/*边框颜色*/
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/*字体颜色: #C40000*/
+button.orderListItemConfirm{
+   background-color: #66B6FF;/*背景色: #66B6FF*/
+   border-radius: 2px;/*圆角*/
+   color: white;/*字体颜色: white*/
+   font-size: 12px;/*字体大小: 12px*/
+   font-weight: bold;/*粗体*/
+   border-width: 0px;/*无边框*/
+   padding: 6px 12px;/*内边距*/
+}
+/*确认收货按钮鼠标悬浮状态*/
+button.orderListItemConfirm:hover{
+   background-color: #118ADB;/*背景色: #118ADB*/
+}
+/******************************************************************confirmPayPage/confirmPayPage1*/
+table{
+   font-size: 12px;/*字体大小: 12px*/
+   font-family: Arial;/*字库*/
+}
+/*确认支付div*/
+div.confirmPayPageDiv{
+   max-width: 1013px;/*最大宽度1013*/
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*确认支付图片所在div*/
+div.confirmPayImageDiv{
+   margin:5px auto 80px auto;/*本元素居中显示*/
+   width: 900px;/*宽度: 900px*/
+   position: relative;/*这里使用相对定位的目的是为了子元素的时间信息可以使用绝对定位*/
+}
+/*时间信息所在div*/
+div.confirmPayImageDiv div{
+   color: #999999;/*字体颜色: #999999*/
+}
+/*卖家发货时间*/
+div.confirmPayTime3{
+   position: absolute;/*绝对定位*/
+   top: 100px;/*往下移动100个像素*/
+   left: 400px;/*往右移动400个像素*/
+}
+/*付款到支付宝时间*/
+div.confirmPayTime2{
+   position: absolute;/*绝对定位*/
+   top: 100px;/*往下移动100个像素*/
+   left: 190px;/*往右移动190个像素*/
+}
+/*拍下商品时间*/
+div.confirmPayTime1{
+   position: absolute;/*绝对定位*/
+   top: 100px;/*往下移动100个像素*/
+   left: -20px;/*往左移动20个像素*/
+}
+/*同意付款字样*/
+div.confirmPayOrderInfoText{
+   margin: 10px 10px 0px 10px;/*外边距*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+   color: black;/*字体颜色: black*/
+   padding-bottom: 15px;/*下内边距*/
+   border-bottom: 1px solid #ADC8E6;/*下边框*/
+}
+/*订单项列表div*/
+div.confirmPayOrderItemDiv{
+   margin: 0px 20px;/*左右外边距*/
+}
+/*订单信息字样*/
+div.confirmPayOrderItemText{
+   margin: 20px 10px;/*外边距*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight:normal;/*正常粗细*/
+   color: black;/*字体颜色: black*/
+}
+/*订单项列表所在表格*/
+table.confirmPayOrderItemTable{
+   border: 1px solid #DDDDDD;/*边框*/
+   width: 100%;/*宽度: 100%*/
+}
+/*表格的标题部分*/
+table.confirmPayOrderItemTable thead{
+   background-color: #E8F2FF;/*背景色: #E8F2FF*/
+   height: 33px;/*高度: 33px*/
+}
+/*表格的每一行*/
+table.confirmPayOrderItemTable tr{
+   border: 1px solid #DDDDDD;/*边框*/
+}
+/*单元格*/
+table.confirmPayOrderItemTable th, table.confirmPayOrderItemTable td{
+   text-align: center;/*文本水平居中*/
+}
+/*订单项列表单元格*/
+table.confirmPayOrderItemTable td{
+   padding: 20px;/*内边距*/
+}
+/*产品连接*/
+td.confirmPayOrderItemProductLink{
+   text-align: left !important;/*居左*/
+}
+/*产品单价*/
+span.conformPayProductPrice{
+   font-size: 18px;/*字体大小: 18px*/
+   font-weight: bold;/*粗体*/
+   color: #666666;/*字体颜色: #666666*/
+}
+/*产品总价*/
+span.confirmPayOrderItemSumPrice{
+   color: #C40000;/*字体颜色: #C40000*/
+}
+/******************************************************************confirmPayPage/confirmPayPage2*/
+/*订单详情div*/
+div.confirmPayOrderDetailDiv{
+   margin: 40px;/*外边距*/
+}
+/*订单详情table*/
+table.confirmPayOrderDetailTable{
+   width: 100%;/*宽度: 100%*/
+   border-top: 1px solid #DDDDDD;/*上边框*/
+}
+/*单元格*/
+table.confirmPayOrderDetailTable td{
+   padding: 8px;/*内边距*/
+   color: black;/*字体颜色: black*/
+   font-size: 14px;/*字体大小: 14px*/
+}
+/*旺旺图标*/
+span.confirmPayOrderDetailWangWangGif{
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 67px;/*宽度: 67px*/
+   height: 22px;/*高度: 22px*/
+   background-image:url(http://how2j.cn/tmall/img/site/wangwang.gif);/*背景图片*/
+   background-repeat: no-repeat;/*背景图片不重复*/
+   background-color: transparent;/*背景色: transparent*/
+   position: relative;/*相对定位*/
+   left: 2px;/*向右移动2px*/
+}
+/*确认按钮div*/
+div.confirmPayButtonDiv{
+   border: 1px solid #F58B0F;/*边框*/
+   margin: 20px;/*外边距*/
+}
+/*支付警告*/
+div.confirmPayWarning{
+   margin: 20px 80px;/*外边距*/
+   font-size: 18px;/*字体大小: 18px*/
+   color: red;/*字体颜色: red*/
+   font-weight: bold;/*粗体*/
+}
+/*确认按钮*/
+button.confirmPayButton{
+   margin: 20px 80px;/*外边距*/
+   width:67px;/*宽度: 67px*/
+   height: 30px;/*高度: 30px*/
+   border: 1px solid #E67C00;/*边框*/
+   background-color: #F4A21D;/*背景色: #F4A21D*/
+   border-radius: 4px;/*圆角*/
+   color: white;/*字体颜色: white*/
+   font-size:12px;/*字体大小*/
+}
+/*确认按钮悬停状态*/
+button.confirmPayButton:hover{
+   background-color: #F6AE30;/*背景色: #F6AE30*/
+}
+/******************************************************************orderFinishPage/orderFinishPage*/
+/*收货成功div*/
+div.orderFinishDiv{
+   border: 1px solid #E5E5E5;/*边框*/
+   padding: 40px;/*内编剧*/
+   max-width: 1013px;/*最大宽度1013px*/
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*收货成功文字*/
+div.orderFinishDiv span{
+font-size: 14px;/*字体大小: 14px*/
+color: black;/*字体颜色: black*/
+font-weight: bold;/*粗体*/
+margin-left: 20px;/*左外边距: 20px*/
+padding-top: 20px;/*上内边距: 20px*/
+}
+/******************************************************************reviewPage/review1*/
+/*评价div*/
+div.reviewDiv{
+   max-width: 1013px;/*最大宽度1013*/
+   margin: 10px auto;/*本元素居中显示*/
+}
+/*图片所在div*/
+div.reviewProductInfoImg{
+   border: 1px solid #E7E7E7;/*边框*/
+   width: 464px;/*宽度: 464px*/
+   text-align: center;/*文本水平居中*/
+   float: left;/*向左漂浮，这样可以水平摆放*/
+}
+/*产品图片*/
+img.reviewProductImg{
+   width:400px;/*宽度400px*/
+   height:400px;/*高度400px*/
+}
+/*右侧div*/
+div.reviewProductInfoRightDiv{
+   overflow: hidden;/*隐藏超出部分*/
+   border-top: 1px solid #E7E7E7;/*上边框*/
+   padding: 30px 20px;/*内边距*/
+}
+/*产品标题*/
+div.reviewProductInfoRightText{
+   color: black;/*字体颜色: black*/
+   font-size: 16px;/*字体大小: 16px*/
+   font-weight: bold;/*粗体*/
+}
+/*产品信息表格*/
+table.reviewProductInfoTable{
+   margin: 20px 10px;/*外边距*/
+   font-size:12px;/*文字大小*/
+}
+/*单元格*/
+table.reviewProductInfoTable td{
+   padding-bottom: 5px;/*下内边距*/
+   color: #999999;/*字体颜色: #999999*/
+}
+/*产品价格*/
+span.reviewProductInfoTablePrice{
+   color: #C40000;/*字体颜色: #C40000*/
+   font-size: 20px;/*字体大小: 20px*/
+   font-weight: bold;/*粗体*/
+}
+/*月销量*/
+span.reviewProductInfoTableSellNumber{
+   color: #C40000;/*字体颜色: #C40000*/
+   font-size: 14px;/*字体大小: 14px*/
+   font-weight: bold;/*粗体*/
+}
+/*购买日期信息所在div*/
+div.reviewProductInfoRightBelowDiv{
+   border: 1px solid #F6F5F3;/*边框*/
+   background-color: #FDFBFA;/*背景色: #FDFBFA*/
+   height: 166px;/*高度: 166px*/
+   padding:16px 0px 16px 81px;/*内边距*/
+}
+/*小图片*/
+span.reviewProductInfoRightBelowImg{
+   background-color: white;/*背景色: white*/
+   border: 1px solid #E1E1E1;/*边框*/
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 23px;/*宽度: 23px*/
+   height: 42px;/*高度: 42px*/
+   background-image:url(http://how2j.cn/tmall/img/site/reviewLight.png);/*背景图片*/
+   background-repeat: no-repeat;/*不重复*/
+   padding: 0px;/* 无内边距*/
+    position: relative;/*相对定位*/
+   left: 0px;/*向左移动4px*/
+   top: 17px;/*向上移动7px*/
+}
+/*购买日期信息*/
+span.reviewProductInfoRightBelowText{
+   border: 1px solid #EFEFEF;/*边框*/
+   display: inline-block;/*显示为内联，既可以设置大小，又能够不换行*/
+   width: 225px;/*宽度: 200px*/
+   height: 42px;/*高度: 42px*/
+   padding: 4px;/*内边距*/
+   position: relative;/*相对定位*/
+   left: -4px;/*向左移动4px*/
+   top: 28px;/*向上移动7px*/
+   color: #666666;/*字体颜色: #666666*/
+   font-size:12px;/*字体大小12px*/
+}
+/******************************************************************reviewPage/review2*/
+/*累计评价div*/
+div.reviewStasticsDiv{
+   margin-top: 20px;/*上外边距: 20px*/
+}
+/*累计评价左侧div*/
+div.reviewStasticsLeft{
+   width: 180px;/*宽度: 180px*/
+   float: left;/*向左漂浮，这样可以水平摆放*/
+}
+/*累计评价左上div*/
+div.reviewStasticsLeftTop{
+   background-color: #C40000;/*背景色: #C40000*/
+   height: 6.5px;/*高度: 6.5px*/
+}
+/*累计评价左边内容*/
+div.reviewStasticsLeftContent{
+   line-height: 29px;/*文本垂直居中*/
+   border-left: 1px solid #D5D4D4;/*左边框*/
+   border-right: 1px solid #D5D4D4;/*右边框*/
+   background-color: #F6F5F1;/*背景色: #F6F5F1*/
+   text-align: center;/*文本水平居中*/
+   font-size: 14px;/*字体大小: 14px*/
+   color: #363535;/*字体颜色: #363535*/
+   font-weight: bold;/*粗体*/
+}
+/*累计评价左下div*/
+div.reviewStasticsLeftFoot{
+   height: 6px;/*高度: 6px*/
+   border-left: 1px solid #D5D4D4;/*左边框*/
+   border-bottom: 1px solid #D5D4D4;/*下边框*/
+   background-color: #F6F5F1;/*背景色: #F6F5F1*/
+}
+/*累计评价数字*/
+span.reviewStasticsNumber{
+   color: #284CA5;/*字体颜色: #284CA5*/
+}
+div.reviewStasticsRight{
+   overflow: hidden;/*自动填满右边*/
+}
+/*累计评价右侧空白div*/
+div.reviewStasticsRightEmpty{
+   height: 35px;/*高度: 35px*/
+}
+/*累计评价右下div*/
+div.reviewStasticsFoot{
+   background-color: #F6F5F1;/*背景色: #F6F5F1*/
+   border: 1px solid #D5D4D4;/*边框*/
+   border-left-width: 0px;/*去掉左边框*/
+   height: 6px;/*高度: 6px*/
+}
+/*进行评价div*/
+div.makeReviewDiv{
+   border: 1px solid #D1CCC8;/*边框*/
+   margin: 20px 0px;/*上下外边距*/
+   background-color: #EFEFEF;/*背景色: #EFEFEF*/
+}
+/*其他买家，需要你的建议哦！*/
+div.makeReviewText{
+   font-size: 16px;/*字体大小: 16px*/
+   color: #333333;/*字体颜色: #333333*/
+   font-weight: bold;/*粗体*/
+   margin: 20px 40px;/*外边距*/
+}
+/*评价商品表格*/
+table.makeReviewTable{
+   margin: 20px 40px;/*外边距*/
+   font-size: 12px;/*字体大小: 12px*/
+}
+/*单元格*/
+table.makeReviewTable td{
+   border: 1px solid #E7E7E7;/*边框*/
+   padding: 10px;/*内边距*/
+   background-color: white;/*背景色: white*/
+}
+/*文本域*/
+table.makeReviewTable textarea{
+   border-width: 0px;/*无边框*/
+   resize: none;/*不可改变大小*/
+   width: 420px;/*宽度: 420px*/
+   height: 120px;/*高度: 120px*/
+}
+table.makeReviewTable textarea:focus{
+  outline:none;
+}
+/*第一列*/
+td.makeReviewTableFirstTD{
+   background-color: #F6F6F6;/*背景色: #F6F6F6*/
+}
+/*提交评价按钮所在div*/
+div.makeReviewButtonDiv{
+   background-color: white;/*背景色: white*/
+   text-align: center;/*文本水平居中*/
+   padding: 15px;/*内边距*/
+}
+/*提交评价按钮*/
+div.makeReviewButtonDiv button{
+   width: 72px;/*宽度: 72px*/
+   height: 26px;/*高度: 26px*/
+   border-radius: 2px;/*圆角*/
+   background-color: #C40000;/*背景色: #C40000*/
+   color: white;/*字体颜色: white*/
+   border-width: 0px;/*无边框*/
+   font-weight: bold;/*粗体*/
+}
+
+/******************************************************************simpleSearch*/
+/******************************************************************simpleSearch*/
+/******************************************************************simpleSearch*/
+/******************************************************************simpleSearch*/
+/******************************************************************simpleSearch*/
+/******************************************************************simpleSearch*/
+/******************************************************************footer1*/
+/*页脚div*/
+div.footer{
+   margin: 0px 0px;/*无外边距*/
+   border-top-style: solid;/*上边框实线*/
+   border-top-width: 1px;/*上边框1个像素*/
+   border-top-color: #e7e7e7;/*上边框颜色*/
+}
+
+/*品质保障图片所在div*/
+div.footer_ensure{
+   margin-top: 24px;/*上外边距*/
+   margin-bottom: 24px;/*下外边距*/
+   text-align: center;/*图片居中*/
+}
+
+/*购物指南等超链所在div*/
+div.footer_desc{
+   border-top-style: solid;/*上边框实线*/
+   border-top-width: 1px;/*上边框1个像素*/
+   border-top-color: #e7e7e7;/*上边框颜色*/
+   padding-top: 30px;/*上内边距*/
+   margin: 0px 20px;/*左右外边距20px*/
+}
+
+/*购物指南，天猫保障等列*/
+div.footer_desc div.descColumn{
+   width: 20%;/*刚好有5列，所以每列占用20%*/
+   float: left;/*漂浮起来，使得这些列水平摆放*/
+   padding-left: 15px;/*左内边距15px*/
+}
+
+/*购物指南等字样*/
+div.footer_desc div.descColumn span.descColumnTitle{
+   color: #646464;/*颜色*/
+   font-weight: bold;/*粗体*/
+   font-size: 16px;/*文本大小16px*/
+}
+
+/*超链*/
+div.footer_desc a{
+   display: block;/*超链默认是inline,会水平摆放，改成block出现换行效果*/
+   padding-top: 3px;/*3px内边距*/
+}
+/******************************************************************footer2*/
+/*页脚二div*/
+div.copyright{
+   background-color: black;/*背景色变为黑色*/
+   border-top-style: solid;/*上边框实线*/
+   border-top-width: 2px;/*上边框2个像素*/
+   border-top-color: #C40000;/*上边框天猫红*/
+}
+
+/*竖线 |*/
+div.copyright span.slash{
+   color: white;/*白色*/
+}
+
+/*应该变成白色的超链*/
+div.footer div.copyright div.white_link a{
+   color: white;/*白色*/
+   padding: 0px 5px;/*水平内边距5px*/
+}
+
+/*超链之间的间隔*/
+div.footer div.copyright div.white_link{
+   padding: 10px 0px;/*上下内边距10px*/
+   margin-left: 10px;/*左外边距10px*/
+}
+
+/*下面关于经营许可证部分的div*/
+div.license{
+   margin-left: 10px;/*做外边距10px*/
+   padding-bottom: 30px;/*下内边距30px*/
+}
+
+/*经营许可证部分字体的颜色*/
+div.license span{
+   color: #A4A4A4;/*颜色#A4A4A4;*/
+}
+
+/*版本信息中的年月*/
+div.license div.copyRightYear{
+   margin: 10px 0px;/*上下外边距10px*/
+   color: #686868;/*颜色#686868;*/
+}
