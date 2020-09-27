@@ -13,7 +13,7 @@ $(function(){
 	</c:if>
 	
 	$(".loginForm").submit(function(){
-		if(0==$(".name").val().length||0==$(".password").val().length){
+		if(0==$("#loginname").val().length||0==$("#loginpassword").val().length){
             $("span.errorMessage").html("请输入账号密码");
             $("div.ErrorMessageDiv").css("visibility","visible");     
             return false;
@@ -47,12 +47,12 @@ $(function(){
 		<br>
 		<div class="input-group ">
 			<span class="input-group-addon"><span class=" glyphicon glyphicon-user"></span></span>
-			<input  name="name" id="name" type="text" class="form-control" placeholder="手机/会员名/邮箱">
+			<input  name="name" id="loginname" type="text" class="form-control" placeholder="手机/会员名/邮箱">
 		</div>
 		<br>
 		<div class="input-group ">
 			<span class="input-group-addon"><span class=" glyphicon glyphicon-lock"></span></span>
-			<input  name="password" id="password" type="text" class="form-control" placeholder="密码">
+			<input  name="password" id="loginpassword" type="text" class="form-control" placeholder="密码">
 		</div>
 		<br>
 		     
